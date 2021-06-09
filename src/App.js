@@ -19,10 +19,10 @@ function App() {
     <> 
     <Header />
     <div className="container">
-      <Balance transactions={transactions} />
-      <IncomeExpences transactions={transactions} />
+      {transactions.length > 0 && <Balance transactions={transactions} />}
+      {transactions.length > 1 &&  <IncomeExpences transactions={transactions} />}
       <AddTransaction setTransactions={setTransactions} transactions={transactions} />
-      <TransactionList transactions={transactions} setTransactions={setTransactions} />
+      {transactions.length > 0 && <TransactionList transactions={transactions} setTransactions={setTransactions} />}
     </div>
     </>
   );

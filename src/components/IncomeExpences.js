@@ -14,7 +14,7 @@ const IncomeExpences = ({transactions}) => {
       <div>
         <h4>Income</h4>
         <p id="money-plus" className="money plus">
-          ${calcTotal(incomeArr)}
+          ${calcTotal(incomeArr) - calcTotal(expenseArr)}
         </p>
       </div>
       <div>
