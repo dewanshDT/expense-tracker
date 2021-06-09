@@ -26,7 +26,9 @@ body {
 
 #root {
   padding: 1rem;
-  width: 320px;
+  width: 100%;
+  min-width: 320px;
+  max-width: 400px;
 }
 
 .header {
@@ -36,6 +38,7 @@ body {
 
 .inc-exp-container {
   display: flex;
+  
   flex-grow: 1;
   text-align: center;
   background: var(--mainbg);
@@ -58,16 +61,23 @@ body {
 
 .inc-exp-container div {
   flex-grow: 1;
-  padding: 1em 2em;
+  /* padding: 1em 2em; */
+  display: flex;
+  flex-direction: column;
+  min-height: 5em;
+  justify-content: center;
+  width: 50%;
 }
 
 .inc-exp-container div h4 {
   text-transform: uppercase;
+  width: 100%;
 }
 
 .inc-exp-container div p.money {
   font-weight: 500;
   font-size: 1.3rem;
+  width: 100%;
 }
 
 .inc-exp-container div p.plus {
