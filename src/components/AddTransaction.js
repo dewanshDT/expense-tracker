@@ -35,6 +35,18 @@ const AddTransaction = ({ setTransactions, transactions }) => {
             required
           />
         </div>
+        
+        <div className="form-control">
+          <label htmlFor="amount">Amount</label>
+          <input
+            value={amount}
+            onChange={(e) => setAmount(Number.parseInt(e.target.value))}
+            type="number"
+            placeholder="enter amount"
+            required
+          />
+        </div>
+
         <div className="form-control radio">
           <label htmlFor="expense">Expense</label>
           <input
@@ -54,16 +66,6 @@ const AddTransaction = ({ setTransactions, transactions }) => {
             id="income"
             radioGroup="transaction"
             onChange={e => {setType(e.target.value)}}
-            required
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="amount">Amount</label>
-          <input
-            value={amount}
-            onChange={(e) => setAmount(Number.parseInt(e.target.value))}
-            type="number"
-            placeholder="enter amount"
             required
           />
         </div>
