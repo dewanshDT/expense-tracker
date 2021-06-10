@@ -31,11 +31,17 @@ body {
   min-width: 320px;
   max-width: 400px;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   margin: 1rem 0;
   text-align: center;
+}
+
+.container {
+  flex-grow: 1;
 }
 
 .inc-exp-container {
@@ -197,6 +203,5 @@ form .btn:hover {
 .footer {
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
-  justify-self: flex-end;
+  /* justify-self: flex-end; */
 }

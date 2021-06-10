@@ -3,7 +3,6 @@ import React from "react";
 const AddTransaction = ({ setTransactions, transactions }) => {
   const [text, setText] = React.useState("");
   const [amount, setAmount] = React.useState(0);
-  const [type, setType] = React.useState('income');
 
   function generateID() {
     return Math.floor(Math.random() * 100000000);
@@ -13,8 +12,7 @@ const AddTransaction = ({ setTransactions, transactions }) => {
     const newTransaction = {
       id: generateID(),
       text,
-      amount: type === "income" ? amount : Number.parseInt('-'+amount),
-      type
+      amount: Number.parseInt(amount),
     };
     e.preventDefault();
 
@@ -40,32 +38,9 @@ const AddTransaction = ({ setTransactions, transactions }) => {
           <label htmlFor="amount">Amount</label>
           <input
             value={amount}
-            onChange={(e) => setAmount(Number.parseInt(e.target.value))}
+            onChange={(e) => setAmount(e.target.value)}
             type="number"
             placeholder="enter amount"
-            required
-          />
-        </div>
-
-        <div className="form-control radio">
-          <label htmlFor="expense">Expense</label>
-          <input
-            type="radio"
-            name="transaction"
-            value="expense"
-            id="expense"
-            radioGroup="transaction"
-            onChange={e => {setType(e.target.value)}}
-            required
-          />
-          <label htmlFor="income">Income</label>
-          <input
-            type="radio"
-            name="transaction"
-            value="income"
-            id="income"
-            radioGroup="transaction"
-            onChange={e => {setType(e.target.value)}}
             required
           />
         </div>
