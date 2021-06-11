@@ -6,36 +6,20 @@ import IncomeExpences from "./components/IncomeExpences";
 import TransactionList from "./components/TransactionList";
 import AddTransaction from "./components/AddTransaction";
 import Footer from "./components/Footer";
+import { TransProvider } from "./components/context/TransContext";
 
 function App() {
-  const [transactions, setTransactions] = React.useState([
-    { id: 1, text: "Flower", amount: -20 },
-    { id: 2, text: "Salary", amount: 300 },
-    { id: 3, text: "Book", amount: -10 },
-    { id: 4, text: "Camera", amount: 150 },
-  ]);
-
   return (
-    <>
+    <TransProvider>
       <Header />
       <div className="container">
-        {transactions.length > 0 && <Balance transactions={transactions} />}
-        {transactions.length > 1 && (
-          <IncomeExpences transactions={transactions} />
-        )}
-        <AddTransaction
-          setTransactions={setTransactions}
-          transactions={transactions}
-        />
-        {transactions.length > 0 && (
-          <TransactionList
-            transactions={transactions}
-            setTransactions={setTransactions}
-          />
-        )}
+        <Balance />
+        <IncomeExpences />
+        <AddTransaction />
+        <TransactionList />
       </div>
       <Footer />
-    </>
+    </TransProvider>
   );
 }
 

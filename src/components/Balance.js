@@ -1,15 +1,17 @@
 import React from "react";
+import { TransContext } from "./context/TransContext";
 
-const Balance = ({transactions}) => {
+const Balance = () => {
+  const [trans] = React.useContext(TransContext);
 
-  let amounts = transactions.map(item => item.amount);
+  let amounts = trans.map((item) => item.amount);
 
-  const total = amounts.reduce((acc, cvl) => acc + cvl);
+  const total = amounts.length ? amounts.reduce((acc, cvl) => acc += cvl) : 0;
 
   return (
     <div>
       <h4>Your balnce</h4>
-      <h1 id="balance">${total}</h1> 
+      <h1 id="balance">${total}</h1>
     </div>
   );
 };

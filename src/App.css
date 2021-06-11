@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,500;600&display=swap');
 
 :root {
   --mainbg: #fff4;
   --green: #1DB954;
   --red: #f04848;
-  --background: #191414;
-  --foreground: #ddd;
+  --background: #adadad;
+  --foreground: #222;
 }
 
 * {
@@ -53,9 +54,20 @@ body {
   border-radius: 1em;
   margin: 1rem 0;
   position: relative;
+  overflow: hidden;
 }
 
-.inc-exp-container::before {
+.income {
+  color: #fff;
+  background: var(--green);
+}
+
+.expense {
+  color: #fff;
+  background: var(--red);
+}
+
+/* .inc-exp-container::before {
   position: absolute;
   content: "";
   top: 50%;
@@ -65,7 +77,7 @@ body {
   height: 80%;
   background: linear-gradient(transparent, var(--background), transparent);
   z-index: 2;
-}
+} */
 
 .inc-exp-container div {
   flex-grow: 1;
@@ -88,13 +100,13 @@ body {
   width: 100%;
 }
 
-.inc-exp-container div p.plus {
+/* .inc-exp-container div p.plus {
   color: var(--green);
 }
 
 .inc-exp-container div p.minus {
   color: var(--red);
-}
+} */
 
 .list {
   list-style-type: none;
@@ -187,7 +199,7 @@ form .btn {
   flex-grow: 1;
   border: none;
   background: #aa6aff;
-  padding: 0.2em 0.5em;
+  padding: 0.4em 0.5em;
   margin: 0.5em 0;
   border-radius: 0.5em;
   cursor: pointer;

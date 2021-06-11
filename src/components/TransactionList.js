@@ -1,13 +1,16 @@
 import React from "react";
 import Transaction from "./Transaction";
+import { TransContext } from "./context/TransContext";
 
-const TransactionList = ({ transactions, setTransactions }) => {
+
+const TransactionList = () => {
+  const [trans, setTrans] = React.useContext(TransContext);
   return (
     <>
       <h3>History</h3>
       <ul id="list" className="list">
-        {transactions.map((item) => (
-            <Transaction key={item.id} transactions={transactions} transaction={item} setTransactions={setTransactions} />
+        {trans.map((item) => (
+            <Transaction key={item.id} trans={trans} transaction={item} setTrans={setTrans} />
         ))}
       </ul>
     </>

@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Transaction = ({transaction, transactions, setTransactions}) => {
+
+const Transaction = ({transaction, trans, setTrans}) => {
     const sign = transaction.amount > 0 ? '+' : '-'; 
 
     const deleteTransaction = () => {
-        setTransactions(transactions.filter(item => item.id !== transaction.id));
+        setTrans(trans.filter(item => item.id !== transaction.id));
     }
 
     return (

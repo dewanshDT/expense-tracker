@@ -1,6 +1,8 @@
 import React from "react";
+import { TransContext } from "./context/TransContext";
 
-const AddTransaction = ({ setTransactions, transactions }) => {
+const AddTransaction = () => {
+  const [trans, setTrans] = React.useContext(TransContext);
   const [text, setText] = React.useState("");
   const [amount, setAmount] = React.useState(0);
 
@@ -16,7 +18,9 @@ const AddTransaction = ({ setTransactions, transactions }) => {
     };
     e.preventDefault();
 
-    setTransactions([...transactions, newTransaction]);
+    setTrans([...trans, newTransaction]);
+    setAmount(0);
+    setText("");
   };
 
   return (
